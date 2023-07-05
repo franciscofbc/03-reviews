@@ -354,13 +354,16 @@ main {
 }
 
 .btn-pre-next {
-  background-color: transparent;
+  background-color: var(--white);
+  box-shadow: none;
+  /* transition: none; */
   color: var(--primary-700);
   font-size: 1.5rem;
   font-weight: 600;
 }
 
 .btn-pre-next:hover {
+  box-shadow: none;
   background: transparent;
   color: var(--primary-500);
 }
