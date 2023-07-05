@@ -1,14 +1,20 @@
 import { useEffect, useState } from 'react';
-import reviews from './data';
+
 import { FaQuoteRight } from 'react-icons/fa';
+import {
+  MdOutlineArrowBackIosNew,
+  MdOutlineArrowForwardIos,
+} from 'react-icons/md';
+
+import reviews from './data';
 
 const App = () => {
   const [index, setIndex] = useState(0);
   const [review, setReview] = useState({});
 
-  const findReview = (index) => {
-    setReview(reviews[index]);
-  };
+  // const findReview = (index) => {
+  //   setReview(reviews[index]);
+  // };
 
   const previous = () => {
     if (index === 0) {
@@ -32,7 +38,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    findReview(index);
+    // findReview(index);
+    setReview(reviews[index]);
   }, [index]);
 
   return (
@@ -50,10 +57,12 @@ const App = () => {
         <p className="text-review">{review.text}</p>
         <div>
           <button onClick={previous} className="btn btn-pre-next">
-            &lt;
+            {/* &lt;  */}
+            <MdOutlineArrowBackIosNew className="icon" />
           </button>
           <button onClick={next} className="btn btn-pre-next">
-            &gt;
+            {/* &gt; */}
+            <MdOutlineArrowForwardIos className="icon" />
           </button>
         </div>
         <button onClick={surprise} className="btn btn-hipster">
